@@ -1,4 +1,5 @@
 import Search from "./Search";
+import ThemeSwitch from "./ThemeSwitch";
 const Header = ({ name }) => {
   return (
     <>
@@ -6,6 +7,7 @@ const Header = ({ name }) => {
         <h1 className="text-4xl">{name}</h1>
         <Search />
       </div>
+      <ThemeSwitch />
     </>
   );
 };
