@@ -1,12 +1,9 @@
 import { createRoot } from "react-dom/client";
+import Dashboard from "./components/Dashboard";
 import "./assets/css/style.css";
 
 const App = () => {
-  return (
-    <div className="grid h-screen place-items-center bg-sky-600 text-2xl">
-      <h1 className="hello font-sans">Meta Foundation</h1>
-    </div>
-  );
+  return <Dashboard />;
 };
 
 const container = document.getElementById("root");
