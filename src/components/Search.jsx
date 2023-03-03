@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { mockSearchResults } from "../constants/Mock";
 import { XMarkIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import SearchResults from "./SearchResults";
 
 const Search = () => {
   const [input, setInput] = useState("");
@@ -32,7 +33,7 @@ const Search = () => {
         }}
       />
       {input && (
-        <button onClick={clear}>
+        <button onClick={clear} className="m-1">
           <XMarkIcon className="h-4 w-4 fill-gray-500" />
         </button>
       )}
@@ -43,6 +44,10 @@ const Search = () => {
       >
         <MagnifyingGlassIcon className="h-4 w-4  fill-gray-100" />
       </button>
+
+      {input && bestMatches.length > 0 ? (
+        <SearchResults results={bestMatches} />
+      ) : null}
     </div>
   );
 };
