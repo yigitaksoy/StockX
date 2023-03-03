@@ -7,3 +7,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #fc6900;
+    width: 10px;
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar-dark::-webkit-scrollbar-thumb {
+    /*  Set darkmode color */
+  }
+}
