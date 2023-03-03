@@ -1,0 +1,9 @@
+/*  Adobe Fonts     */
+
+@import url("https://use.typekit.net/xnv6jcn.css");
+
+/*  Tailwind CSS    */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
