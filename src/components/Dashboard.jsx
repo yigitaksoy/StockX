@@ -1,6 +1,7 @@
 import Card from "./Card";
 import { mockCompanyDetails } from "../constants/Mock";
 import Header from "./Header";
+import Details from "./Details";
 
 const Dashboard = () => {
   return (
@@ -15,7 +16,7 @@ const Dashboard = () => {
         <Card>Overview</Card>
       </div>
       <div className="row-span-2 xl:row-span-3">
-        <Card>Details</Card>
+        <Details details={mockCompanyDetails} />
       </div>
     </div>
   );
