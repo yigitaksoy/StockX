@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { mockSearchResults } from "../constants/Mock";
+import { useState, useRef, useEffect } from "react";
 import { XMarkIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import SearchResults from "./SearchResults";
+import { mockSearchResults } from "../constants/Mock";
 
 const Search = () => {
   const [input, setInput] = useState("");
   const [bestMatches, setBestMatches] = useState(mockSearchResults.result);
+  const ref = useRef(null);
 
   const clear = () => {
     setInput("");
@@ -16,8 +17,25 @@ const Search = () => {
     setBestMatches(mockSearchResults.result);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setBestMatches([]);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref, setBestMatches]);
+
   return (
-    <div className="relative z-50 my-4 flex w-96 items-center rounded-md border-2 border-neutral-200 bg-white">
+    <div
+      ref={ref}
+      className="w-70 relative z-50 my-4 flex items-center rounded-md border-2 border-neutral-200 bg-white md:w-96 lg:w-96"
+    >
       <input
         type="text"
         value={input}
