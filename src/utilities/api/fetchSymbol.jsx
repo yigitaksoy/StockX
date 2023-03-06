@@ -1,4 +1,4 @@
-import { finnhub } from "../../helpers/finnhub";
+import { finnhub } from "../../helpers/finnhubAPI";
 
 const fetchSymbol = async (input) => {
   const apiKey = import.meta.env.VITE_FINNHUB_API_KEY;
@@ -6,7 +6,7 @@ const fetchSymbol = async (input) => {
 
   if (!apiRes.ok) {
     console.log(import.meta.env.VITE_SOME_KEY);
-    throw new Error(`Symbol ${input} fetch not ok ${apiKey}`);
+    throw new Error(`Symbol ${input} fetch not ok`);
   }
 
   return apiRes.json();
