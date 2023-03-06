@@ -10,9 +10,12 @@ import {
 import { mockHistoricalData } from "../constants/Mock";
 import { convertDateToUnixTimestampToDate } from "../helpers/dateHelper";
 import Card from "./Card";
+import ChartFilters from "./ChartFilters";
+import { chartConfig } from "../constants/config";
 
 const Chart = () => {
   const [data, setData] = useState(mockHistoricalData);
+  const [filter, setFilter] = useState("1W");
 
   const formatData = () => {
     return data.c.map((item, index) => {
@@ -25,6 +28,19 @@ const Chart = () => {
 
   return (
     <Card>
+      <ul className="absolute top-2 right-2 z-40 flex">
+        {Object.keys(chartConfig).map((item) => (
+          <li key={item}>
+            <ChartFilters
+              text={item}
+              active={filter === item}
+              onClick={() => {
+                setFilter(item);
+              }}
+            />
+          </li>
+        ))}
+      </ul>
       <ResponsiveContainer className="text-neutral-700">
         <AreaChart data={formatData(data)}>
           <defs>
