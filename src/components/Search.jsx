@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { XMarkIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import SearchResults from "./SearchResults";
-import { mockSearchResults } from "../constants/Mock";
+import fetchSymbol from "../utilities/api/fetchSymbol";
 
 const Search = () => {
   const [input, setInput] = useState("");
-  const [bestMatches, setBestMatches] = useState(mockSearchResults.result);
+  const [bestMatches, setBestMatches] = useState([]);
   const ref = useRef(null);
 
   const clear = () => {
@@ -13,8 +13,17 @@ const Search = () => {
     setBestMatches([]);
   };
 
-  const updateBestMatches = () => {
-    setBestMatches(mockSearchResults.result);
+  const updateBestMatches = async () => {
+    try {
+      if (input) {
+        const searchResults = await fetchSymbol(input);
+        const result = searchResults.result;
+        setBestMatches(result);
+      }
+    } catch (error) {
+      setBestMatches([]);
+      console.log(error);
+    }
   };
 
   useEffect(() => {
