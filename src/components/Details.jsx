@@ -25,7 +25,7 @@ const Details = ({ details }) => {
               <>
                 <span>{detailsList[item]}</span>
                 <img
-                  className="h-7 w-7 object-contain"
+                  className="h-5 w-5 object-contain md:h-5 md:w-5 lg:h-7 lg:w-7"
                   src={details[item]}
                   alt={detailsList[item]}
                 />
