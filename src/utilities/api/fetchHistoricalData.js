@@ -1,4 +1,4 @@
-import { finnhub } from "../../helpers/finnhubAPI";
+import { finnhub } from "../helpers/finnhubAPI";
 
 const fetchHistoricalData = async (stockSymbol, resolution, from, to) => {
   const apiKey = import.meta.env.VITE_FINNHUB_API_KEY;

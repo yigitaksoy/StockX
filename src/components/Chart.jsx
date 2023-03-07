@@ -11,7 +11,7 @@ import {
   createDate,
   convertDateToUnixTimestamp,
   convertUnixTimestampToDate,
-} from "../helpers/dateHelper";
+} from "../utilities/helpers/dateHelper";
 import fetchHistoricalData from "../utilities/api/fetchHistoricalData";
 import StockContext from "../context/StockContext";
 import Card from "./Card";
