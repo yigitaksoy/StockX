@@ -45,7 +45,14 @@ const Dashboard = () => {
         darkMode ? "bg-zinc-900" : "bg-gray-100"
       }`}
     >
-      <div className="col-span-1 row-span-1 flex items-center justify-start md:col-span-2 xl:col-span-3">
+      <h1
+        className={`logo xs: invisible absolute right-10 text-4xl font-bold transition duration-700  md:invisible lg:visible xl:visible ${
+          darkMode ? "text-white" : "font-black"
+        }`}
+      >
+        StockX
+      </h1>
+      <div className="col-span-1 row-span-1 flex items-center justify-start md:col-span-2 lg:mt-5 xl:col-span-3 xl:mt-5">
         <Header name={stockDetails.name} />
       </div>
       <div className="row-span-4 md:col-span-2">
