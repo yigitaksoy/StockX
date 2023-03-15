@@ -14,12 +14,14 @@ import {
 } from "../utilities/helpers/dateHelper";
 import fetchHistoricalData from "../utilities/api/fetchHistoricalData";
 import StockContext from "../context/StockContext";
+import ThemeContext from "../context/ThemeContext";
 import Card from "./Card";
 import ChartFilters from "./ChartFilters";
 import { chartConfig } from "../constants/config";
 
 const Chart = () => {
   const { stockSymbol } = useContext(StockContext);
+  const { darkMode } = useContext(ThemeContext);
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState("1W");
 
@@ -85,12 +87,12 @@ const Chart = () => {
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor="rgb(108, 117, 125)"
+                stopColor={darkMode ? "#a9a7d4" : "rgb(108, 117, 125)"}
                 stopOpacity={0.8}
               />
               <stop
                 offset="95%"
-                stopColor="rgb(108, 117, 125)"
+                stopColor={darkMode ? "#a9a7d4" : "rgb(108, 117, 125)"}
                 stopOpacity={0}
               />
             </linearGradient>
@@ -98,7 +100,7 @@ const Chart = () => {
           <Area
             type="monotone"
             dataKey="value"
-            stroke="#111111"
+            stroke={darkMode ? "#a9a7d4" : "#111111"}
             fillOpacity={1}
             strokeWidth={0.8}
             fill="url(#chartColor)"
