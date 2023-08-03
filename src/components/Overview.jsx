@@ -2,17 +2,10 @@ import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 import Card from "./Card";
 
-const Overview = ({ symbol, price, change, changePercent, currency }) => {
+const Overview = ({ price, change, changePercent, currency }) => {
   const { darkMode } = useContext(ThemeContext);
   return (
     <Card>
-      <span
-        className={`absolute left-4 top-4 text-lg transition duration-700 xl:text-xl 2xl:text-2xl ${
-          darkMode ? "text-white" : "text-black"
-        }`}
-      >
-        {symbol}
-      </span>
       <div
         className={`flex h-full w-full items-center justify-around ${
           darkMode ? "text-white" : "text-black"
