@@ -41,7 +41,7 @@ const Dashboard = () => {
 
   return (
     <div
-      className={`grid h-screen auto-rows-fr grid-cols-1 grid-rows-8 gap-6 p-10 font-sans transition duration-700 md:grid-cols-2 md:grid-rows-7 xl:grid-cols-3 xl:grid-rows-5 ${
+      className={`grid-rows-8 md:grid-rows-7 grid h-screen auto-rows-fr grid-cols-1 gap-6 p-10 font-sans transition duration-700 md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-5 ${
         darkMode ? "bg-zinc-900" : "bg-gray-100"
       }`}
     >
@@ -53,7 +53,7 @@ const Dashboard = () => {
         StockX
       </h1>
       <div className="col-span-1 row-span-1 flex items-center justify-start md:col-span-2 lg:mt-5 xl:col-span-3 xl:mt-5">
-        <Header name={stockDetails.name} />
+        <Header symbol={stockSymbol} name={stockDetails.name} />
       </div>
       <div className="row-span-4 md:col-span-2">
         <Chart />
