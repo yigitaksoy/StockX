@@ -6,7 +6,7 @@ const Header = ({ name, symbol }) => {
   const { darkMode } = useContext(ThemeContext);
   return (
     <>
-      <div className="xl:px-32">
+      <div>
         <h1
           className={`text-2xl font-bold transition duration-700 md:text-3xl ${
             darkMode ? "text-white" : null
@@ -16,7 +16,9 @@ const Header = ({ name, symbol }) => {
         </h1>
         <Search />
       </div>
-      <ThemeSwitch />
+      <div>
+        <ThemeSwitch />
+      </div>
     </>
   );
 };
