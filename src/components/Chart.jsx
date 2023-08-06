@@ -15,7 +15,7 @@ import {
 import fetchHistoricalData from "../utilities/api/fetchHistoricalData";
 import StockContext from "../context/StockContext";
 import ThemeContext from "../context/ThemeContext";
-import Card from "./Card";
+import ChartCard from "./ChartCard";
 import ChartFilters from "./ChartFilters";
 import { chartConfig } from "../constants/config";
 
@@ -67,11 +67,12 @@ const Chart = () => {
   }, [stockSymbol, filter]);
 
   return (
-    <Card>
-      <ul className="absolute top-2 right-2 z-40 flex">
+    <ChartCard>
+      <ul className="absolute right-2 top-2 z-40 flex text-sm">
         {Object.keys(chartConfig).map((item) => (
           <li key={item}>
             <ChartFilters
+              className=""
               text={item}
               active={filter === item}
               onClick={() => {
@@ -110,7 +111,7 @@ const Chart = () => {
           <YAxis domain={["dataMin", "dataMax"]} />
         </AreaChart>
       </ResponsiveContainer>
-    </Card>
+    </ChartCard>
   );
 };
 
