@@ -45,7 +45,7 @@ const Search = () => {
   return (
     <div
       ref={ref}
-      className={`w-70 relative z-50 my-4 flex items-center rounded-md border-2 border-neutral-200 bg-white transition duration-700 md:w-96 lg:w-96 ${
+      className={`w-70 relative z-50 my-2 flex items-center rounded-md border-2 border-neutral-200 bg-white transition duration-700 md:w-96 lg:w-96 ${
         darkMode ? "border-neutral-700 bg-zinc-900" : "bg-white text-black"
       }`}
     >
