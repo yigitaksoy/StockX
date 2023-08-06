@@ -11,7 +11,7 @@ const ThemeSwitch = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="absolute right-8 rounded-lg border-1 border-neutral-700 p-2 shadow-lg xl:right-32"
+      className="absolute right-2 rounded-lg border-1 border-neutral-700 p-2 shadow-lg md:right-10"
     >
       {darkMode ? (
         <SunIcon className="h-5 w-5 cursor-pointer stroke-neutral-300 stroke-1" />
