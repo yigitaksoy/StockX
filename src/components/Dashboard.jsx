@@ -46,7 +46,11 @@ const Dashboard = () => {
       }`}
     >
       <div className="col-span-1 row-span-1 flex items-center justify-start md:col-span-2 lg:mt-5 xl:col-span-3 xl:mt-5">
-        <Header symbol={stockSymbol} name={stockDetails.name} />
+        <Header
+          symbol={stockSymbol}
+          name={stockDetails.name}
+          logo={stockDetails.logo}
+        />
       </div>
       <div className="row-span-4 md:col-span-2">
         <Chart />
