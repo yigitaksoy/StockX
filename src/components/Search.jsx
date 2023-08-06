@@ -42,6 +42,11 @@ const Search = () => {
     };
   }, [ref, setBestMatches]);
 
+  const onSelect = (result) => {
+    setInput(result.symbol);
+    setBestMatches([]);
+  };
+
   return (
     <div
       ref={ref}
@@ -79,7 +84,7 @@ const Search = () => {
       </button>
 
       {input && bestMatches.length > 0 ? (
-        <SearchResults results={bestMatches} />
+        <SearchResults results={bestMatches} onSelect={onSelect} />
       ) : null}
     </div>
   );
