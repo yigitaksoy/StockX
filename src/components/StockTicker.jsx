@@ -43,6 +43,7 @@ const StockTicker = () => {
   };
   return (
     <div
+      id="ticker"
       className={`w-full transition duration-300 md:absolute ${
         darkMode
           ? "border-neutral-700 bg-zinc-900"
