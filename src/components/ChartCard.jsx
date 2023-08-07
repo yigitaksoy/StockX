@@ -5,7 +5,7 @@ const ChartCard = ({ children }) => {
   const { darkMode } = useContext(ThemeContext);
   return (
     <div
-      className={`relative h-full w-full rounded-md border-2 transition duration-700 sm:p-0 md:p-2 ${
+      className={`relative h-full w-full rounded-md border-2 pt-5 transition duration-700 sm:p-0 md:p-2 ${
         darkMode
           ? "border-neutral-700 bg-zinc-900"
           : "bg-white text-neutral-400"
