@@ -101,7 +101,7 @@ const Chart = () => {
           <Area
             type="monotone"
             dataKey="value"
-            stroke={darkMode ? "#a9a7d4" : "#111111"}
+            stroke={darkMode ? "#000" : "#111111"}
             fillOpacity={1}
             strokeWidth={0.8}
             fill="url(#chartColor)"
